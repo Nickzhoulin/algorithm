@@ -1,0 +1,28 @@
+public class DepthFirstSearch{
+	public static void f(int n,int[] num,int[] book)
+	{
+		if(n==10)
+		{
+			if(num[1]*100+num[2]*10+num[3]+num[4]*100+num[5]*10+num[6]==num[7]*100+num[8]*10+num[9])
+			{
+				System.out.printf("%d%d%d+%d%d%d=%d%d%d\n",num[1],num[2],num[3],num[4],num[5],num[6],num[7],num[8],num[9]);
+			}
+		}
+		for(int i=1;i<=9;i++)
+		{
+			if(book[i]==0)
+				{
+				num[n]=i;
+				book[i]=1;
+				f(n+1,num,book);
+				book[i]=0;
+				}
+		}
+	}
+	public static void main(String[] args)
+	{
+		int[] num=new int [10];
+		int[] book=new int [10];
+		f(1,num,book);
+	}
+}
